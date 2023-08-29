@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import fetchData from "./utils/fetchData.js";
+import Loading from "./components/Loading.jsx";
 
 const url = 'https://course-api.com/react-tabs-project';
 
@@ -18,7 +19,7 @@ const App = () => {
   if (isLoading) {
     return (
       <section className="jobs-center">
-        <div className="loading"></div>
+        <Loading />
       </section>
     );
   }
