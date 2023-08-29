@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import fetchData from "./utils/fetchData.js";
 import Loading from "./components/Loading.jsx";
+import JobInfo from "./components/JobInfo.jsx";
 
 const url = 'https://course-api.com/react-tabs-project';
 
@@ -26,10 +27,17 @@ const App = () => {
 
   if (isError) {
     return (
-      <div>Error</div>
+      <section className="jobs-center">
+        <div>Oops, something went wrong</div>
+      </section>
     );
   }
 
-  return <h2>Tabs Starter</h2>;
+  return (
+    <section className="jobs-center">
+      <JobInfo jobs={jobs} />
+    </section>
+  );
+
 };
 export default App;
