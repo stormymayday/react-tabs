@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <section className="jobs-center">
-      <BtnContainer jobs={jobs} />
+      <BtnContainer jobs={jobs} currentItem={currentItem} setCurrentItem={setCurrentItem} />
       <JobInfo jobs={jobs} currentItem={currentItem} />
     </section>
   );
