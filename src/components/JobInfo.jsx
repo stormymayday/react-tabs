@@ -1,3 +1,5 @@
+import JobDuties from "./JobDuties.jsx";
+
 const JobInfo = ({ jobs }) => {
 
     const { company, dates, duties, title } = jobs[0];
@@ -7,6 +9,7 @@ const JobInfo = ({ jobs }) => {
             <h3>{title}</h3>
             <span className="job-company">{company}</span>
             <p className="job-date">{dates}</p>
+            <JobDuties duties={duties} />
         </article>
     );
 }
