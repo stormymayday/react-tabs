@@ -8,9 +8,10 @@ const url = 'https://course-api.com/react-tabs-project';
 
 const App = () => {
 
-  const [jobs, setJobs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [jobs, setJobs] = useState([]);
+  const [currentItem, setCurrentItem] = useState(0);
 
   useEffect(() => {
 
@@ -37,7 +38,7 @@ const App = () => {
   return (
     <section className="jobs-center">
       <BtnContainer jobs={jobs} />
-      <JobInfo jobs={jobs} />
+      <JobInfo jobs={jobs} currentItem={currentItem} />
     </section>
   );
 

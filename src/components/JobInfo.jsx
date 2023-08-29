@@ -1,8 +1,8 @@
 import JobDuties from "./JobDuties.jsx";
 
-const JobInfo = ({ jobs }) => {
+const JobInfo = ({ jobs, currentItem }) => {
 
-    const { company, dates, duties, title } = jobs[0];
+    const { company, dates, duties, title } = jobs[currentItem];
 
     return (
         <article className="job-info">
