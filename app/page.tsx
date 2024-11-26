@@ -31,14 +31,18 @@ export default function Home() {
 
     if (isLoading) {
         return (
-            <main>
-                <h1>Loading</h1>
-            </main>
+            <section className="jobs-center">
+                <div className="loading"></div>
+            </section>
         );
     }
 
     if (isError) {
-        return <main>{errorMessage}</main>;
+        return (
+            <section className="jobs-center">
+                <h1>{errorMessage}</h1>
+            </section>
+        );
     }
 
     return (
