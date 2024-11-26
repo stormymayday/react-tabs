@@ -4,6 +4,7 @@ import { JobType } from "@/types";
 import { fetchData } from "@/utils";
 import { useState, useEffect } from "react";
 import JobInfo from "@/components/JobInfo";
+import BtnContainer from "@/components/BtnContainer";
 
 export default function Home() {
     const [jobs, setJobs] = useState<JobType[]>([]);
@@ -48,6 +49,7 @@ export default function Home() {
         <>
             {jobs.length > 0 && (
                 <section className="jobs-center">
+                    <BtnContainer jobs={jobs} />
                     <JobInfo jobs={jobs} />
                 </section>
             )}
