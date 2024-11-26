@@ -3,8 +3,8 @@
 import { JobType } from "@/types";
 import { fetchData } from "@/utils";
 import { useState, useEffect } from "react";
-import JobInfo from "@/components/JobInfo";
-import BtnContainer from "@/components/BtnContainer";
+import JobInfo from "@/components/Tabs/JobInfo";
+import BtnContainer from "@/components/Tabs/BtnContainer";
 
 function Tabs() {
     const [jobs, setJobs] = useState<JobType[]>([]);
