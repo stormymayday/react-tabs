@@ -11,6 +11,7 @@ function Tabs() {
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [currentItem, setCurrentItem] = useState(0);
 
     const getData = async () => {
         setIsLoading(true);
@@ -49,8 +50,12 @@ function Tabs() {
         <>
             {jobs.length > 0 && (
                 <section className="jobs-center">
-                    <BtnContainer jobs={jobs} />
-                    <JobInfo jobs={jobs} />
+                    <BtnContainer
+                        jobs={jobs}
+                        currentItem={currentItem}
+                        setCurrentItem={setCurrentItem}
+                    />
+                    <JobInfo jobs={jobs} currentItem={currentItem} />
                 </section>
             )}
         </>

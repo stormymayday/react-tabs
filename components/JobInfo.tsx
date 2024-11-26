@@ -3,10 +3,11 @@ import Duties from "./Duties";
 
 interface JobInfoProps {
     jobs: JobType[];
+    currentItem: number;
 }
 
-function JobInfo({ jobs }: JobInfoProps) {
-    const { title, company, dates, duties } = jobs[0];
+function JobInfo({ jobs, currentItem }: JobInfoProps) {
+    const { title, company, dates, duties } = jobs[currentItem];
 
     return (
         <article className="job-info">
