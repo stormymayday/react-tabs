@@ -5,8 +5,6 @@ interface BtnContainerProps {
 }
 
 function BtnContainer({ jobs }: BtnContainerProps) {
-    console.log(jobs);
-
     return (
         <div className="btn-container">
             {jobs.length > 0 &&
