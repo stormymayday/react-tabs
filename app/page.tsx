@@ -3,6 +3,7 @@
 import { JobType } from "@/types";
 import { fetchData } from "@/utils";
 import { useState, useEffect } from "react";
+import JobInfo from "@/components/JobInfo";
 
 export default function Home() {
     const [jobs, setJobs] = useState<JobType[]>([]);
@@ -27,8 +28,6 @@ export default function Home() {
         getData();
     }, []);
 
-    console.log(jobs);
-
     if (isLoading) {
         return (
             <section className="jobs-center">
@@ -46,8 +45,12 @@ export default function Home() {
     }
 
     return (
-        <main>
-            <h1>Success!</h1>
-        </main>
+        <>
+            {jobs.length > 0 && (
+                <section className="jobs-center">
+                    <JobInfo jobs={jobs} />
+                </section>
+            )}
+        </>
     );
 }
